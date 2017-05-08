@@ -105,8 +105,6 @@ ApplicationMain.create = function() {
 	types.push("IMAGE");
 	urls.push("img/icon.png");
 	types.push("IMAGE");
-	urls.push("img/onepage.jpg");
-	types.push("IMAGE");
 	urls.push("img/onepage.png");
 	types.push("IMAGE");
 	urls.push("img/photo21.png");
@@ -135,7 +133,7 @@ ApplicationMain.init = function() {
 	if(total == 0) ApplicationMain.start();
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "281", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
+	ApplicationMain.config = { build : "282", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	lime_Assets.initialize();
@@ -1419,7 +1417,7 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		if(this.inited) return;
 		this.inited = true;
 		if(Main.getBrowserType() == "MOBILE") {
-			var webpage = new SmartphonePage();
+			var webpage = new DesktopPage();
 			this.addChild(webpage);
 		} else {
 			var webpage1 = new DesktopPage();
@@ -1679,9 +1677,6 @@ var DefaultAssetLibrary = function() {
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	id = "img/icon.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/onepage.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	id = "img/onepage.png";
@@ -2092,20 +2087,6 @@ Reflect.makeVarArgs = function(f) {
 		return f(a);
 	};
 };
-var SmartphonePage = function() {
-	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["SmartphonePage"] = SmartphonePage;
-SmartphonePage.__name__ = ["SmartphonePage"];
-SmartphonePage.__super__ = openfl_display_Sprite;
-SmartphonePage.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		haxe_Log.trace("on Mobile",{ fileName : "SmartphonePage.hx", lineNumber : 23, className : "SmartphonePage", methodName : "onStage"});
-	}
-	,__class__: SmartphonePage
-});
 var Std = function() { };
 $hxClasses["Std"] = Std;
 Std.__name__ = ["Std"];
@@ -3634,7 +3615,7 @@ var lime_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 174275;
+	this.version = 776179;
 };
 $hxClasses["lime.AssetCache"] = lime_AssetCache;
 lime_AssetCache.__name__ = ["lime","AssetCache"];
