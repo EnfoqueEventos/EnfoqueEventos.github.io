@@ -21,95 +21,21 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
-	urls.push("img/album/bodas/1.jpg");
+	urls.push("img/1.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/10.jpg");
+	urls.push("img/2.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/11.jpg");
+	urls.push("img/3.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/12.jpg");
+	urls.push("img/4.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/13.jpg");
+	urls.push("img/5.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/14.jpg");
+	urls.push("img/64.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/2.jpg");
+	urls.push("img/Greenlight.png");
 	types.push("IMAGE");
-	urls.push("img/album/bodas/3.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/bodas/4.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/bodas/5.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/bodas/6.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/bodas/7.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/bodas/8.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/bodas/9.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/1.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/2.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/3.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/4.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/5.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/6.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/7.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/otro/8.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/1.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/10.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/11.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/12.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/13.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/14.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/2.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/3.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/4.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/5.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/6.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/7.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/8.jpg");
-	types.push("IMAGE");
-	urls.push("img/album/sesiones/9.jpg");
-	types.push("IMAGE");
-	urls.push("img/boda.png");
-	types.push("IMAGE");
-	urls.push("img/cf.png");
-	types.push("IMAGE");
-	urls.push("img/cumple.png");
-	types.push("IMAGE");
-	urls.push("img/enf.png");
-	types.push("IMAGE");
-	urls.push("img/fiesta.png");
-	types.push("IMAGE");
-	urls.push("img/icon.png");
-	types.push("IMAGE");
-	urls.push("img/onepage.png");
-	types.push("IMAGE");
-	urls.push("img/photo21.png");
-	types.push("IMAGE");
-	urls.push("img/que.png");
+	urls.push("img/Logo4.png");
 	types.push("IMAGE");
 	if(ApplicationMain.config.assetsPrefix != null) {
 		var _g1 = 0;
@@ -133,12 +59,11 @@ ApplicationMain.init = function() {
 	if(total == 0) ApplicationMain.start();
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "5", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
+	ApplicationMain.config = { build : "70", company : "VicenteFleitas", file : "CriptomediaWeb", fps : 60, name : "CriptomediaStudios", orientation : "", packageName : "CriptomediaStudios", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "CriptomediaStudios", vsync : false, width : 0, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	lime_Assets.initialize();
-	var entryPoint = Type.resolveClass("Main");
-	Reflect.callMethod(entryPoint,Reflect.field(entryPoint,"main"),[]);
+	new DocumentClass();
 	openfl_Lib.current.stage.dispatchEvent(new openfl_events_Event("resize",false,false));
 	if(openfl_Lib.current.stage.window.__fullscreen) openfl_Lib.current.stage.dispatchEvent(new openfl_events_FullScreenEvent("fullScreen",false,false,true,true));
 };
@@ -1389,9 +1314,14 @@ openfl_display_Sprite.prototype = $extend(openfl_display_DisplayObjectContainer.
 	,__properties__: $extend(openfl_display_DisplayObjectContainer.prototype.__properties__,{get_graphics:"get_graphics"})
 });
 var Main = function() {
-	this.scrollSpeed = 9;
 	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.added));
+	if(Main.getBrowserType() == "MOBILE") {
+		var webpage = new MobileInit();
+		this.addChild(webpage);
+	} else {
+		var webpage1 = new DesktopInit();
+		this.addChild(webpage1);
+	}
 };
 $hxClasses["Main"] = Main;
 Main.__name__ = ["Main"];
@@ -1403,62 +1333,9 @@ Main.getBrowserType = function() {
 	}
 	return browserType;
 };
-Main.main = function() {
-	openfl_Lib.current.stage.align = 6;
-	openfl_Lib.current.stage.scaleMode = 2;
-	openfl_Lib.current.addChild(new Main());
-};
 Main.__super__ = openfl_display_Sprite;
 Main.prototype = $extend(openfl_display_Sprite.prototype,{
-	resize: function(e) {
-		if(!this.inited) this.init();
-	}
-	,init: function() {
-		if(this.inited) return;
-		this.inited = true;
-		if(Main.getBrowserType() == "MOBILE") {
-			var webpage = new DesktopPage();
-			this.addChild(webpage);
-		} else {
-			var webpage1 = new DesktopPage();
-			this.addChild(webpage1);
-		}
-		this.set_x(this.stage.stageWidth * .5 - 360);
-		this.stage.addEventListener("mouseWheel",$bind(this,this.scrollWheel));
-		this.stage.addEventListener("keyDown",$bind(this,this.onKeyDown));
-	}
-	,scrollWheel: function(e) {
-		if(e.delta < 0) {
-			var _g = this;
-			_g.set_y(_g.get_y() - this.scrollSpeed);
-		} else {
-			var _g1 = this;
-			_g1.set_y(_g1.get_y() + this.scrollSpeed);
-		}
-		if(this.get_y() > 0) this.set_y(0); else if(this.get_y() < this.stage.stageHeight - this.get_height()) this.set_y(this.stage.stageHeight - this.get_height());
-	}
-	,onKeyDown: function(e) {
-		var _g = e.keyCode;
-		switch(_g) {
-		case 40:
-			var _g1 = this;
-			_g1.set_y(_g1.get_y() - this.scrollSpeed);
-			if(this.get_y() > 0) this.set_y(0); else if(this.get_y() < this.stage.stageHeight - this.get_height()) this.set_y(this.stage.stageHeight - this.get_height());
-			break;
-		case 38:
-			var _g11 = this;
-			_g11.set_y(_g11.get_y() + this.scrollSpeed);
-			if(this.get_y() > 0) this.set_y(0); else if(this.get_y() < this.stage.stageHeight - this.get_height()) this.set_y(this.stage.stageHeight - this.get_height());
-			break;
-		default:
-		}
-	}
-	,added: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.added));
-		this.stage.addEventListener("resize",$bind(this,this.resize));
-		this.init();
-	}
-	,__class__: Main
+	__class__: Main
 });
 var DocumentClass = function() {
 	openfl_Lib.current.addChild(this);
@@ -1553,139 +1430,28 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = "img/album/bodas/1.jpg";
+	id = "img/1.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/10.jpg";
+	id = "img/2.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/11.jpg";
+	id = "img/3.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/12.jpg";
+	id = "img/4.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/13.jpg";
+	id = "img/5.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/14.jpg";
+	id = "img/64.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/2.jpg";
+	id = "img/Greenlight.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/3.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/4.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/5.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/6.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/7.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/8.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/bodas/9.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/1.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/2.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/3.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/4.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/5.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/6.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/7.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/otro/8.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/1.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/10.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/11.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/12.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/13.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/14.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/2.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/3.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/4.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/5.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/6.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/7.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/8.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/album/sesiones/9.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/boda.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/cf.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/cumple.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/enf.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/fiesta.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/icon.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/onepage.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/photo21.png";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "img/que.png";
+	id = "img/Logo4.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	var assetsPrefix = null;
@@ -1809,27 +1575,146 @@ DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
 	}
 	,__class__: DefaultAssetLibrary
 });
-var DesktopPage = function() {
-	this.space = 15;
+var DesktopInit = function() {
+	this.space = 20;
+	this.width_page = 720;
 	openfl_display_Sprite.call(this);
 	this.addEventListener("addedToStage",$bind(this,this.onStage));
 };
-$hxClasses["DesktopPage"] = DesktopPage;
-DesktopPage.__name__ = ["DesktopPage"];
-DesktopPage.__super__ = openfl_display_Sprite;
-DesktopPage.prototype = $extend(openfl_display_Sprite.prototype,{
+$hxClasses["DesktopInit"] = DesktopInit;
+DesktopInit.__name__ = ["DesktopInit"];
+DesktopInit.__super__ = openfl_display_Sprite;
+DesktopInit.prototype = $extend(openfl_display_Sprite.prototype,{
 	onStage: function(e) {
 		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		var header = new lib_Header();
+		var header = new openfl_display_Sprite();
+		header.get_graphics().beginFill(2240831);
+		header.get_graphics().drawRect(0,0,this.width_page,this.stage.stageHeight);
+		header.get_graphics().endFill();
 		this.addChild(header);
-		var body = new lib_Body();
-		body.set_y(header.get_height() + this.space);
+		header.set_x(this.stage.stageWidth * .5 - header.get_width() * .5);
+		header.set_y(0);
+		var logo = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/Logo4.png"));
+		logo.set_scaleX(.5);
+		logo.set_scaleY(.5);
+		logo.set_x(this.stage.stageWidth * .5 - this.width_page * .5);
+		logo.set_y(0);
+		this.addChild(logo);
+		var title = new openfl_text_TextField();
+		title.setTextFormat(new openfl_text_TextFormat("_sans",28,16777215));
+		title.set_selectable(false);
+		title.set_text("Criptomedia Studios");
+		title.set_width(title.get_textWidth() + 20);
+		title.set_x(this.stage.stageWidth * .5 - title.get_width() * .5);
+		title.set_y(80);
+		this.addChild(title);
+		var twitter_btn = new lib_Button(1952511,"t",32,32,"https://twitter.com/criptomedia");
+		twitter_btn.set_x(this.stage.stageWidth * .5 + this.width_page * .5 - twitter_btn._w - this.space);
+		twitter_btn.set_y(90);
+		this.addChild(twitter_btn);
+		var facebook_btn = new lib_Button(3889560,"f",32,32,"https://www.facebook.com/Criptomedia");
+		facebook_btn.set_x(this.stage.stageWidth * .5 + this.width_page * .5 - facebook_btn._w - this.space);
+		facebook_btn.set_y(50);
+		this.addChild(facebook_btn);
+		var body = new openfl_display_Sprite();
+		body.get_graphics().beginFill(3426654);
+		body.get_graphics().drawRect(0,30,this.width_page,this.stage.stageHeight - 90);
+		body.get_graphics().endFill();
 		this.addChild(body);
-		var footer = new lib_Footer();
-		footer.set_y(header.get_height() + body.get_height() + this.space * 2);
-		this.addChild(footer);
+		body.set_x(this.stage.stageWidth * .5 - body.get_width() * .5);
+		body.set_y(120);
+		var logo_gb = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/64.png"));
+		logo_gb.set_scaleX(.5);
+		logo_gb.set_scaleY(.5);
+		logo_gb.set_x(this.stage.stageWidth * .5 - this.width_page * .5 + this.space);
+		logo_gb.set_y(170);
+		this.addChild(logo_gb);
+		var title_headline = new openfl_text_TextField();
+		title_headline.setTextFormat(new openfl_text_TextFormat("_sans",28,16777215));
+		title_headline.set_selectable(false);
+		title_headline.set_text("GoldenBits");
+		title_headline.set_width(title_headline.get_textWidth() + 20);
+		title_headline.set_x(this.stage.stageWidth * .5 - this.width_page * .5 + this.space * 2 + logo_gb.get_width());
+		title_headline.set_y(170);
+		this.addChild(title_headline);
+		var description_headline = new openfl_text_TextField();
+		description_headline.set_defaultTextFormat(new openfl_text_TextFormat("sans-serif",16,16777215));
+		description_headline.set_selectable(false);
+		description_headline.set_multiline(true);
+		description_headline.set_text("Have fun creating simple pixelart platform games. Create tiles, items, fully animated characters. Adds functionality to tiles, characters and items. Compose music and sound effects in 8bit or chiptune style. All this without touching a line of code.");
+		description_headline.set_width(this.width_page * .5 - this.space * 6);
+		description_headline.set_height(200);
+		description_headline.set_x(this.stage.stageWidth * .5 - 360. + this.space);
+		description_headline.set_y(210);
+		this.addChild(description_headline);
+		var greenlight_bitmap = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/Greenlight.png"));
+		var greenlight_btn = new openfl_display_Sprite();
+		greenlight_btn.buttonMode = true;
+		greenlight_btn.addChild(greenlight_bitmap);
+		greenlight_btn.set_scaleX(.7);
+		greenlight_btn.set_scaleY(.7);
+		greenlight_btn.set_x(this.stage.stageWidth * .5 - this.width_page * .5 + this.space);
+		greenlight_btn.set_y(400);
+		this.addChild(greenlight_btn);
+		greenlight_btn.addEventListener("mouseUp",$bind(this,this.mouseReleaseGB));
+		var iframe = window.document.createElement("iframe");
+		iframe.width = "420";
+		iframe.height = "315";
+		iframe.src = "https://www.youtube.com/embed/VP57xGNbjDI";
+		var domSprite = new openfl_display_DOMSprite(iframe);
+		domSprite.set_x(this.stage.stageWidth * .5 - (420 - this.width_page * .5) - this.space);
+		domSprite.set_y(170);
+		this.addChild(domSprite);
+		var screenShots = new lib_ScreenScroll();
+		screenShots.set_x(this.stage.stageWidth * .5 - screenShots.width_mask * .5);
+		screenShots.set_y(512);
+		this.addChild(screenShots);
+		var iframe_gif1 = window.document.createElement("iframe");
+		iframe_gif1.width = "240";
+		iframe_gif1.height = "183";
+		iframe_gif1.src = "https://giphy.com/embed/3o7bu4m7tTiSU1abYc";
+		var domSpriteGif = new openfl_display_DOMSprite(iframe_gif1);
+		domSpriteGif.set_x(this.stage.stageWidth * .5 - this.width_page * .5 + this.space * .5);
+		domSpriteGif.set_y(662);
+		this.addChild(domSpriteGif);
+		var iframe_gif2 = window.document.createElement("iframe");
+		iframe_gif2.width = "183";
+		iframe_gif2.height = "183";
+		iframe_gif2.src = "https://giphy.com/embed/l0IydkXFRHljfuqKk";
+		var domSpriteGif2 = new openfl_display_DOMSprite(iframe_gif2);
+		domSpriteGif2.set_x(this.stage.stageWidth * .5 - 91.5 + this.space);
+		domSpriteGif2.set_y(662);
+		this.addChild(domSpriteGif2);
+		var iframe_gif3 = window.document.createElement("iframe");
+		iframe_gif3.width = "183";
+		iframe_gif3.height = "183";
+		iframe_gif3.src = "https://giphy.com/embed/3o7bu7ryJuNezby3YI";
+		var domSpriteGif3 = new openfl_display_DOMSprite(iframe_gif3);
+		domSpriteGif3.set_x(this.stage.stageWidth * .5 + this.width_page * .5 - 183 - this.space);
+		domSpriteGif3.set_y(662);
+		this.addChild(domSpriteGif3);
+		var foot = new openfl_display_Sprite();
+		foot.get_graphics().beginFill(6783135);
+		foot.get_graphics().drawRect(0,0,this.width_page,60);
+		foot.get_graphics().endFill();
+		this.addChild(foot);
+		foot.set_x(this.stage.stageWidth * .5 - foot.get_width() * .5);
+		foot.set_y(this.stage.stageHeight - foot.get_height());
+		var FOOTER_text = new openfl_text_TextField();
+		FOOTER_text.set_defaultTextFormat(new openfl_text_TextFormat("sans-serif",16,16777215,null,null,null,null,null,0));
+		FOOTER_text.set_multiline(true);
+		FOOTER_text.set_selectable(false);
+		FOOTER_text.set_text("©2015 Criptomedia Studios  \n\n criptomediagames@gmail.com");
+		FOOTER_text.set_width(FOOTER_text.get_textWidth() + 20);
+		FOOTER_text.set_height(FOOTER_text.get_textHeight());
+		FOOTER_text.set_x(this.stage.stageWidth * .5 - FOOTER_text.get_textWidth() * .5);
+		FOOTER_text.set_y(this.stage.stageHeight - foot.get_height() * .5 - FOOTER_text.get_textHeight() * .4);
+		this.addChild(FOOTER_text);
 	}
-	,__class__: DesktopPage
+	,mouseReleaseGB: function(e) {
+		openfl_Lib.getURL(new openfl_net_URLRequest("http://steamcommunity.com/sharedfiles/filedetails/?id=881034264"),"_blank");
+	}
+	,__class__: DesktopInit
 });
 var EReg = function(r,opt) {
 	opt = opt.split("u").join("");
@@ -1975,6 +1860,81 @@ _$List_ListIterator.prototype = {
 	,__class__: _$List_ListIterator
 };
 Math.__name__ = ["Math"];
+var MobileInit = function() {
+	this.space = 5;
+	openfl_display_Sprite.call(this);
+	this.addEventListener("addedToStage",$bind(this,this.onStage));
+};
+$hxClasses["MobileInit"] = MobileInit;
+MobileInit.__name__ = ["MobileInit"];
+MobileInit.__super__ = openfl_display_Sprite;
+MobileInit.prototype = $extend(openfl_display_Sprite.prototype,{
+	onStage: function(e) {
+		this.removeEventListener("addedToStage",$bind(this,this.onStage));
+		var logo = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/Logo4.png"));
+		logo.set_scaleX(.4);
+		logo.set_scaleY(.4);
+		logo.set_x(-5);
+		logo.set_y(-10);
+		this.addChild(logo);
+		var insta_btn = new lib_Button(0,"i",32,32,"https://www.instagram.com/criptomediastudios");
+		insta_btn.set_x(190);
+		insta_btn.set_y(10);
+		this.addChild(insta_btn);
+		var facebook_btn = new lib_Button(3889560,"f",32,32,"https://www.facebook.com/Criptomedia");
+		facebook_btn.set_x(230);
+		facebook_btn.set_y(10);
+		this.addChild(facebook_btn);
+		var twitter_btn = new lib_Button(1952511,"t",32,32,"https://twitter.com/criptomedia");
+		twitter_btn.set_x(270);
+		twitter_btn.set_y(10);
+		this.addChild(twitter_btn);
+		var greenlight_bitmap = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/Greenlight.png"));
+		var greenlight_btn = new openfl_display_Sprite();
+		greenlight_btn.buttonMode = true;
+		greenlight_btn.addChild(greenlight_bitmap);
+		greenlight_btn.set_scaleX(.5);
+		greenlight_btn.set_scaleY(.5);
+		greenlight_btn.set_x(150);
+		greenlight_btn.set_y(40);
+		this.addChild(greenlight_btn);
+		greenlight_btn.addEventListener("mouseUp",$bind(this,this.mouseReleaseGB));
+		var iframe = window.document.createElement("iframe");
+		iframe.width = "310";
+		iframe.height = "180";
+		iframe.src = "https://www.youtube.com/embed/VP57xGNbjDI";
+		var domSprite = new openfl_display_DOMSprite(iframe);
+		domSprite.set_x(0);
+		domSprite.set_y(100);
+		this.addChild(domSprite);
+		var logo_gb = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/64.png"));
+		logo_gb.set_scaleX(.5);
+		logo_gb.set_scaleY(.5);
+		logo_gb.set_x(this.space);
+		logo_gb.set_y(290);
+		this.addChild(logo_gb);
+		var title_headline = new openfl_text_TextField();
+		title_headline.setTextFormat(new openfl_text_TextFormat("_sans",28,16777215));
+		title_headline.set_text("GoldenBits");
+		title_headline.set_width(title_headline.get_textWidth() + 20);
+		title_headline.set_x(this.space * 2 + logo_gb.get_width());
+		title_headline.set_y(293);
+		this.addChild(title_headline);
+		var description_headline = new openfl_text_TextField();
+		description_headline.set_defaultTextFormat(new openfl_text_TextFormat("sans-serif",16,16777215));
+		description_headline.set_multiline(true);
+		description_headline.set_text("Have fun creating simple pixelart platform games. Create tiles, items, fully animated characters. Adds functionality to tiles, characters and items. Compose music and sound effects in 8bit or chiptune style. All this without touching a line of code.");
+		description_headline.set_width(310);
+		description_headline.set_height(140);
+		description_headline.set_x(this.space);
+		description_headline.set_y(323);
+		this.addChild(description_headline);
+	}
+	,mouseReleaseGB: function(e) {
+		openfl_Lib.getURL(new openfl_net_URLRequest("http://steamcommunity.com/sharedfiles/filedetails/?id=881034264"),"_blank");
+	}
+	,__class__: MobileInit
+});
 var NMEPreloader = function() {
 	openfl_display_Sprite.call(this);
 	var backgroundColor = this.getBackgroundColor();
@@ -2051,9 +2011,6 @@ Reflect.setField = function(o,field,value) {
 Reflect.getProperty = function(o,field) {
 	var tmp;
 	if(o == null) return null; else if(o.__properties__ && (tmp = o.__properties__["get_" + field])) return o[tmp](); else return o[field];
-};
-Reflect.callMethod = function(o,func,args) {
-	return func.apply(o,args);
 };
 Reflect.fields = function(o) {
 	var a = [];
@@ -3155,284 +3112,7 @@ js_html_compat_Uint8Array._subarray = function(start,end) {
 	a.byteOffset = start;
 	return a;
 };
-var lib_Album = function() {
-	this.photoPath = "img/album/otro/";
-	this.maxPhotos = 8;
-	this.nPhotos = 3;
-	this.iPhoto = 1;
-	this.space = 10;
-	this.bgColor = 3426654;
-	this.album_height = 220;
-	this.album_width = 680;
-	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["lib.Album"] = lib_Album;
-lib_Album.__name__ = ["lib","Album"];
-lib_Album.__super__ = openfl_display_Sprite;
-lib_Album.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		this.get_graphics().beginFill(this.bgColor);
-		this.get_graphics().drawRoundRect(0,0,this.album_width,this.album_height,10,10);
-		this.get_graphics().endFill();
-		this.drawPhotos(this.iPhoto);
-		this.addEventListener("click",$bind(this,this.changePhoto));
-	}
-	,reInit: function() {
-		this.iPhoto = 1;
-		this.nPhotos = 3;
-		this.clearPhotos();
-		this.drawPhotos(this.iPhoto);
-	}
-	,changePhoto: function(e) {
-		this.iPhoto += 2;
-		this.nPhotos += 2;
-		if(this.iPhoto > this.maxPhotos) {
-			this.iPhoto = 1;
-			this.nPhotos = 3;
-		}
-		this.clearPhotos();
-		this.drawPhotos(this.iPhoto);
-	}
-	,clearPhotos: function() {
-		var _g1 = 0;
-		var _g = this.get_numChildren();
-		while(_g1 < _g) {
-			var i = _g1++;
-			this.removeChildAt(i);
-		}
-	}
-	,drawPhotos: function(n) {
-		this.pos = 0;
-		var _g1 = n;
-		var _g = this.nPhotos;
-		while(_g1 < _g) {
-			var i = _g1++;
-			var lvl = new openfl_display_Bitmap(openfl_Assets.getBitmapData(this.photoPath + i + ".jpg"));
-			lvl.set_scaleX(.45);
-			lvl.set_scaleY(.45);
-			lvl.set_x(324 * this.pos + this.space + this.space * this.pos);
-			lvl.set_y(this.space * 2);
-			this.addChild(lvl);
-			this.pos++;
-		}
-	}
-	,__class__: lib_Album
-});
-var lib_Body = function() {
-	this.space = 15;
-	this.body_height = 1080;
-	this.body_width = 720;
-	this.bgLineColor = 3426654;
-	this.bgColor = 11393254;
-	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["lib.Body"] = lib_Body;
-lib_Body.__name__ = ["lib","Body"];
-lib_Body.__super__ = openfl_display_Sprite;
-lib_Body.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		this.stage.addEventListener("DesactivateAll",$bind(this,this.desactivateBtn));
-		this.stage.addEventListener("ChangePath",$bind(this,this.changePath));
-		var slogan = new lib_Slogan();
-		slogan.set_x(this.space);
-		slogan.set_y(this.space);
-		this.addChild(slogan);
-		var iframe = window.document.createElement("iframe");
-		iframe.width = "420";
-		iframe.height = "315";
-		iframe.src = "https://www.youtube.com/embed/iMP_rZVwiaw";
-		var domSprite = new openfl_display_DOMSprite(iframe);
-		domSprite.set_x(this.space + slogan.get_y() + slogan.get_width());
-		domSprite.set_y(this.space);
-		this.addChild(domSprite);
-		this.bodaBtn = new lib_TypeBtn();
-		this.bodaBtn.set_x(this.space);
-		this.bodaBtn.set_y(slogan.get_height() + this.space * 2);
-		this.addChild(this.bodaBtn);
-		this.cumpleBtn = new lib_TypeBtn("cumple");
-		this.cumpleBtn.set_x(this.space + this.bodaBtn.get_width() + this.space);
-		this.cumpleBtn.set_y(slogan.get_height() + this.space * 2);
-		this.addChild(this.cumpleBtn);
-		this.fiestaBtn = new lib_TypeBtn("fiesta");
-		this.fiestaBtn.set_x(this.space + this.bodaBtn.get_width() + this.space + this.cumpleBtn.get_width() + this.space);
-		this.fiestaBtn.set_y(slogan.get_height() + this.space * 2);
-		this.addChild(this.fiestaBtn);
-		var contenedorBtn = new openfl_display_Sprite();
-		this.addChild(contenedorBtn);
-		contenedorBtn.addChild(this.bodaBtn);
-		contenedorBtn.addChild(this.fiestaBtn);
-		contenedorBtn.addChild(this.cumpleBtn);
-		contenedorBtn.set_x(this.body_width * .5 - contenedorBtn.get_width() * .5);
-		this.album = new lib_Album();
-		this.album.set_x(this.space);
-		this.album.set_y(slogan.get_height() + this.space * 3 + this.bodaBtn.get_height());
-		this.addChild(this.album);
-		var onepage = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/onepage.png"));
-		onepage.set_x(3);
-		onepage.set_y(this.album.get_y() + this.album.get_height() + this.space * 2);
-		this.addChild(onepage);
-		this.get_graphics().lineStyle(3,this.bgLineColor);
-		this.get_graphics().beginFill(this.bgColor);
-		this.get_graphics().drawRoundRect(0,0,this.body_width,this.body_height + this.space,10,10);
-		this.get_graphics().endFill();
-		this.bodaBtn.initActive();
-	}
-	,desactivateBtn: function(e) {
-		this.bodaBtn.desactivate();
-		this.cumpleBtn.desactivate();
-		this.fiestaBtn.desactivate();
-	}
-	,changePath: function(e) {
-		if(this.bodaBtn.state) {
-			this.album.photoPath = "img/album/bodas/";
-			this.album.maxPhotos = 14;
-		}
-		if(this.cumpleBtn.state) {
-			this.album.photoPath = "img/album/otro/";
-			this.album.maxPhotos = 8;
-		}
-		if(this.fiestaBtn.state) {
-			this.album.photoPath = "img/album/sesiones/";
-			this.album.maxPhotos = 14;
-		}
-		this.album.reInit();
-	}
-	,__class__: lib_Body
-});
-var lib_Footer = function() {
-	this.footer_height = 80;
-	this.footer_width = 720;
-	this.bgLineColor = 3426654;
-	this.bgColor = 15004158;
-	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["lib.Footer"] = lib_Footer;
-lib_Footer.__name__ = ["lib","Footer"];
-lib_Footer.__super__ = openfl_display_Sprite;
-lib_Footer.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		var FOOTER_text = new openfl_text_TextField();
-		FOOTER_text.set_defaultTextFormat(new openfl_text_TextFormat("sans-serif",16,0,true,null,null,null,null,0));
-		FOOTER_text.set_multiline(false);
-		FOOTER_text.set_wordWrap(false);
-		FOOTER_text.set_selectable(false);
-		FOOTER_text.set_text("©2015 Enfoque Eventos --- Contacto: +595 983 432369 --- mail: enfoquephotography@hotmail.com");
-		FOOTER_text.set_width(FOOTER_text.get_textWidth() + 20);
-		FOOTER_text.set_height(FOOTER_text.get_textHeight() + 20);
-		FOOTER_text.set_x(this.footer_width * .5 - FOOTER_text.get_textWidth() * .5);
-		FOOTER_text.set_y(this.footer_height * .5 - FOOTER_text.get_textHeight() * .4);
-		this.addChild(FOOTER_text);
-		this.get_graphics().lineStyle(3,this.bgLineColor);
-		this.get_graphics().beginFill(this.bgColor);
-		this.get_graphics().drawRoundRect(0,0,this.footer_width,this.footer_height,10,10);
-		this.get_graphics().endFill();
-	}
-	,__class__: lib_Footer
-});
-var lib_Header = function() {
-	this.header_height = 150;
-	this.header_width = 720;
-	this.bgLineColor = 3426654;
-	this.bgColor = 15004158;
-	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["lib.Header"] = lib_Header;
-lib_Header.__name__ = ["lib","Header"];
-lib_Header.__super__ = openfl_display_Sprite;
-lib_Header.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		this.Enf = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/enf.png"));
-		this.Enf.set_x(0);
-		this.Enf.set_y(0);
-		this.Enf.set_alpha(0);
-		this.addChild(this.Enf);
-		this.logo = new lib_Logo();
-		this.logo.set_x(this.logo.get_width());
-		this.logo.set_alpha(0);
-		this.logo.set_y(88);
-		this.addChild(this.logo);
-		this.que = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/que.png"));
-		this.que.set_x(331);
-		this.que.set_y(-14);
-		this.que.set_alpha(0);
-		this.addChild(this.que);
-		this.cf = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/cf.png"));
-		this.cf.set_x(402);
-		this.cf.set_y(126);
-		this.cf.set_alpha(0);
-		this.addChild(this.cf);
-		var twitter_btn = new lib_RedBtn(1952511,"t",32,32,"https://twitter.com/criptomedia");
-		twitter_btn.set_x(this.header_width - twitter_btn._w * 2);
-		twitter_btn.set_y(90);
-		this.addChild(twitter_btn);
-		var facebook_btn = new lib_RedBtn(3889560,"f",32,32,"https://www.facebook.com/Enfoque-Cine-Fotografia-605273429522582/?fref=ts");
-		facebook_btn.set_x(720 - facebook_btn._w * 2);
-		facebook_btn.set_y(50);
-		this.addChild(facebook_btn);
-		this.get_graphics().lineStyle(3,this.bgLineColor);
-		this.get_graphics().beginFill(this.bgColor);
-		this.get_graphics().drawRoundRect(0,0,this.header_width,this.header_height,10,10);
-		this.get_graphics().endFill();
-	}
-	,loop: function(e) {
-		var _g = this.logo;
-		_g.set_x(_g.get_x() + 5);
-		var _g1 = this.logo;
-		_g1.set_alpha(_g1.get_alpha() + .1);
-		var _g2 = this.Enf;
-		_g2.set_alpha(_g2.get_alpha() + .002);
-		var _g3 = this.que;
-		_g3.set_alpha(_g3.get_alpha() + .002);
-		var _g4 = this.cf;
-		_g4.set_alpha(_g4.get_alpha() + .002);
-		if(this.logo.get_x() == 270) {
-			this.logo.set_alpha(1);
-			this.Enf.set_alpha(1);
-			this.que.set_alpha(1);
-			this.cf.set_alpha(1);
-			this.logo.exit();
-			this.removeEventListener("enterFrame",$bind(this,this.loop));
-		}
-	}
-	,__class__: lib_Header
-});
-var lib_Logo = function() {
-	openfl_display_Sprite.call(this);
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["lib.Logo"] = lib_Logo;
-lib_Logo.__name__ = ["lib","Logo"];
-lib_Logo.__super__ = openfl_display_Sprite;
-lib_Logo.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		var icon = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/icon.png"));
-		icon.set_x(-icon.get_width() * .5);
-		icon.set_y(-icon.get_height() * .5);
-		this.addChild(icon);
-		this._timer = new openfl_utils_Timer(60);
-		this._timer.addEventListener("timer",$bind(this,this.loop));
-		this._timer.start();
-	}
-	,loop: function(e) {
-		var _g = this;
-		_g.set_rotation(_g.get_rotation() + 10);
-	}
-	,exit: function() {
-		this._timer.stop();
-		this._timer.removeEventListener("timer",$bind(this,this.loop));
-	}
-	,__class__: lib_Logo
-});
-var lib_RedBtn = function(c,s,h,w,url) {
+var lib_Button = function(c,s,h,w,url) {
 	if(url == null) url = "";
 	if(w == null) w = 32;
 	if(h == null) h = 32;
@@ -3444,10 +3124,10 @@ var lib_RedBtn = function(c,s,h,w,url) {
 	this._url = url;
 	this.addEventListener("addedToStage",$bind(this,this.onStage));
 };
-$hxClasses["lib.RedBtn"] = lib_RedBtn;
-lib_RedBtn.__name__ = ["lib","RedBtn"];
-lib_RedBtn.__super__ = openfl_display_Sprite;
-lib_RedBtn.prototype = $extend(openfl_display_Sprite.prototype,{
+$hxClasses["lib.Button"] = lib_Button;
+lib_Button.__name__ = ["lib","Button"];
+lib_Button.__super__ = openfl_display_Sprite;
+lib_Button.prototype = $extend(openfl_display_Sprite.prototype,{
 	onStage: function(e) {
 		this.removeEventListener("addedToStage",$bind(this,this.onStage));
 		if(this.str == "i") {
@@ -3478,143 +3158,52 @@ lib_RedBtn.prototype = $extend(openfl_display_Sprite.prototype,{
 	,mouseRelease: function(e) {
 		if(this._url != "") openfl_Lib.getURL(new openfl_net_URLRequest(this._url),"_blank");
 	}
-	,__class__: lib_RedBtn
+	,__class__: lib_Button
 });
-var lib_Slogan = function() {
-	this.space = 15;
-	this.slogan_height = 315;
-	this.slogan_width = 256;
-	this.bgLineColor = 3426654;
-	this.bgColor = 15004158;
+var lib_ScreenScroll = function() {
+	this.height_mask = 118;
+	this.width_mask = 700;
 	openfl_display_Sprite.call(this);
 	this.addEventListener("addedToStage",$bind(this,this.onStage));
 };
-$hxClasses["lib.Slogan"] = lib_Slogan;
-lib_Slogan.__name__ = ["lib","Slogan"];
-lib_Slogan.__super__ = openfl_display_Sprite;
-lib_Slogan.prototype = $extend(openfl_display_Sprite.prototype,{
+$hxClasses["lib.ScreenScroll"] = lib_ScreenScroll;
+lib_ScreenScroll.__name__ = ["lib","ScreenScroll"];
+lib_ScreenScroll.__super__ = openfl_display_Sprite;
+lib_ScreenScroll.prototype = $extend(openfl_display_Sprite.prototype,{
 	onStage: function(e) {
 		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		var logo_gb = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/photo21.png"));
-		logo_gb.set_scaleX(1);
-		logo_gb.set_scaleY(1);
-		logo_gb.set_x(this.space);
-		logo_gb.set_y(this.space);
-		this.addChild(logo_gb);
-		var title_headline = new openfl_text_TextField();
-		title_headline.setTextFormat(new openfl_text_TextFormat("_sans",28,0));
-		title_headline.set_selectable(false);
-		title_headline.set_multiline(true);
-		title_headline.set_text("Cine & fotografía");
-		title_headline.set_width(this.slogan_width - logo_gb.get_width() - this.space * 2);
-		title_headline.set_height(title_headline.get_textHeight() + 50);
-		title_headline.set_x(this.space + logo_gb.get_x() + logo_gb.get_width());
-		title_headline.set_y(this.space);
-		this.addChild(title_headline);
-		var description_headline = new openfl_text_TextField();
-		description_headline.set_defaultTextFormat(new openfl_text_TextFormat("sans-serif",18,0));
-		description_headline.set_selectable(false);
-		description_headline.set_multiline(true);
-		description_headline.set_wordWrap(true);
-		description_headline.set_text("Captura un momento, alumbra un propósito en el corazón de una imagen. Deja el hobby y gana una pasión, haz una sentencia sin decir una palabra. Capturando una memoria para siempre, cada gran momento escrito a tu manera en una foto en un vídeo.");
-		description_headline.set_width(this.slogan_width - this.space * 2);
-		description_headline.set_height(description_headline.get_textWidth());
-		description_headline.set_x(this.space);
-		description_headline.set_y(this.space + logo_gb.get_y() + logo_gb.get_height());
-		this.addChild(description_headline);
-		this.get_graphics().lineStyle(3,this.bgLineColor);
-		this.get_graphics().beginFill(this.bgColor);
-		this.get_graphics().drawRoundRect(0,0,this.slogan_width,this.slogan_height,10,10);
-		this.get_graphics().endFill();
-	}
-	,__class__: lib_Slogan
-});
-var lib_TypeBtn = function(s) {
-	if(s == null) s = "boda";
-	this.btncolor = 3426654;
-	this.state = false;
-	openfl_display_Sprite.call(this);
-	this._s = s;
-	this.addEventListener("addedToStage",$bind(this,this.onStage));
-};
-$hxClasses["lib.TypeBtn"] = lib_TypeBtn;
-lib_TypeBtn.__name__ = ["lib","TypeBtn"];
-lib_TypeBtn.__super__ = openfl_display_Sprite;
-lib_TypeBtn.prototype = $extend(openfl_display_Sprite.prototype,{
-	onStage: function(e) {
-		this.removeEventListener("addedToStage",$bind(this,this.onStage));
-		this.sprite = new openfl_display_Sprite();
-		this.sprite.get_graphics().beginFill(this.btncolor);
-		this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-		this.sprite.get_graphics().endFill();
-		this.addChild(this.sprite);
-		var icon = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/" + this._s + ".png"));
-		icon.set_x(0);
-		icon.set_y(0);
-		this.sprite.addChild(icon);
-		this.buttonMode = true;
-		this.addEventListener("mouseOver",$bind(this,this.paint));
-		this.addEventListener("mouseOut",$bind(this,this.unPaint));
-		this.addEventListener("click",$bind(this,this.onClick));
-	}
-	,onClick: function(e) {
-		this.dispatchEvent(new openfl_events_Event("DesactivateAll",true));
-		this.activate();
-		this.dispatchEvent(new openfl_events_Event("ChangePath",true));
-	}
-	,initActive: function() {
-		this.dispatchEvent(new openfl_events_Event("DesactivateAll",true));
-		this.activate();
-		this.dispatchEvent(new openfl_events_Event("ChangePath",true));
-	}
-	,activate: function() {
-		this.sprite.get_graphics().beginFill(15004158);
-		this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-		this.sprite.get_graphics().endFill();
-		this.state = true;
-	}
-	,desactivate: function() {
-		this.sprite.get_graphics().beginFill(this.btncolor);
-		this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-		this.sprite.get_graphics().endFill();
-		this.state = false;
-	}
-	,paint: function(e) {
-		if(!this.state) {
-			this.sprite.get_graphics().clear();
-			this.sprite.get_graphics().lineStyle(3,16777215);
-			this.sprite.get_graphics().beginFill(this.btncolor);
-			this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-			this.sprite.get_graphics().endFill();
-		} else {
-			this.sprite.get_graphics().clear();
-			this.sprite.get_graphics().lineStyle(3,16777215);
-			this.sprite.get_graphics().beginFill(15004158);
-			this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-			this.sprite.get_graphics().endFill();
+		this.contenedor = new openfl_display_Sprite();
+		this.contenedor.get_graphics().beginFill(0);
+		this.contenedor.get_graphics().drawRect(0,0,this.width_mask,this.height_mask);
+		this.contenedor.get_graphics().endFill();
+		this.addChild(this.contenedor);
+		var _g = 0;
+		while(_g < 4) {
+			var i = _g++;
+			var foto = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/" + (i + 1) + ".png"));
+			foto.set_scaleX(.2);
+			foto.set_scaleY(.2);
+			this.contenedor.addChild(foto);
+			foto.set_x(144. * i + 25 * (i + 1));
+			foto.set_y(18);
 		}
+		var back = new lib_Button(6783135,"<",32,32);
+		back.set_y(37);
+		back.set_x(-16.);
+		this.addChild(back);
+		var forward = new lib_Button(6783135,">",32,32);
+		forward.set_y(37);
+		forward.set_x(684.);
+		this.addChild(forward);
 	}
-	,unPaint: function(e) {
-		if(!this.state) {
-			this.sprite.get_graphics().clear();
-			this.sprite.get_graphics().beginFill(this.btncolor);
-			this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-			this.sprite.get_graphics().endFill();
-		} else {
-			this.sprite.get_graphics().clear();
-			this.sprite.get_graphics().beginFill(15004158);
-			this.sprite.get_graphics().drawRoundRect(0,0,96,96,10,10);
-			this.sprite.get_graphics().endFill();
-		}
-	}
-	,__class__: lib_TypeBtn
+	,__class__: lib_ScreenScroll
 });
 var lime_AssetCache = function() {
 	this.enabled = true;
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 477822;
+	this.version = 53950;
 };
 $hxClasses["lime.AssetCache"] = lime_AssetCache;
 lime_AssetCache.__name__ = ["lime","AssetCache"];
@@ -28165,98 +27754,6 @@ openfl_filters_BitmapFilter.prototype = {
 	}
 	,__class__: openfl_filters_BitmapFilter
 };
-var openfl_filters_ColorMatrixFilter = function(matrix) {
-	openfl_filters_BitmapFilter.call(this);
-	this.set_matrix(matrix);
-};
-$hxClasses["openfl.filters.ColorMatrixFilter"] = openfl_filters_ColorMatrixFilter;
-openfl_filters_ColorMatrixFilter.__name__ = ["openfl","filters","ColorMatrixFilter"];
-openfl_filters_ColorMatrixFilter.__super__ = openfl_filters_BitmapFilter;
-openfl_filters_ColorMatrixFilter.prototype = $extend(openfl_filters_BitmapFilter.prototype,{
-	clone: function() {
-		return new openfl_filters_ColorMatrixFilter(this.matrix);
-	}
-	,__applyFilter: function(sourceBitmapData,destBitmapData,sourceRect,destPoint) {
-		lime_graphics_utils_ImageCanvasUtil.convertToCanvas(sourceBitmapData.image);
-		lime_graphics_utils_ImageCanvasUtil.createImageData(sourceBitmapData.image);
-		lime_graphics_utils_ImageCanvasUtil.convertToCanvas(destBitmapData.image);
-		lime_graphics_utils_ImageCanvasUtil.createImageData(destBitmapData.image);
-		var source = sourceBitmapData.image.get_data();
-		var target = destBitmapData.image.get_data();
-		var offsetX = destPoint.x - sourceRect.x | 0;
-		var offsetY = destPoint.y - sourceRect.y | 0;
-		var sourceStride = sourceBitmapData.width * 4;
-		var targetStride = destBitmapData.width * 4;
-		var sourceOffset;
-		var targetOffset;
-		var _g1 = sourceRect.y | 0;
-		var _g = sourceRect.height | 0;
-		while(_g1 < _g) {
-			var row = _g1++;
-			var _g3 = sourceRect.x | 0;
-			var _g2 = sourceRect.width | 0;
-			while(_g3 < _g2) {
-				var column = _g3++;
-				sourceOffset = row * sourceStride + column * 4;
-				targetOffset = (row + offsetX) * targetStride + (column + offsetY) * 4;
-				var srcR = source[sourceOffset];
-				var srcG = source[sourceOffset + 1];
-				var srcB = source[sourceOffset + 2];
-				var srcA = source[sourceOffset + 3];
-				var val = Std["int"](_$UInt_UInt_$Impl_$.toFloat(srcR) * this.matrix[0] + _$UInt_UInt_$Impl_$.toFloat(srcG) * this.matrix[1] + _$UInt_UInt_$Impl_$.toFloat(srcB) * this.matrix[2] + _$UInt_UInt_$Impl_$.toFloat(srcA) * this.matrix[3] + this.matrix[4]);
-				target[targetOffset] = val;
-				var val1 = Std["int"](_$UInt_UInt_$Impl_$.toFloat(srcR) * this.matrix[5] + _$UInt_UInt_$Impl_$.toFloat(srcG) * this.matrix[6] + _$UInt_UInt_$Impl_$.toFloat(srcB) * this.matrix[7] + _$UInt_UInt_$Impl_$.toFloat(srcA) * this.matrix[8] + this.matrix[9]);
-				target[targetOffset + 1] = val1;
-				var val2 = Std["int"](_$UInt_UInt_$Impl_$.toFloat(srcR) * this.matrix[10] + _$UInt_UInt_$Impl_$.toFloat(srcG) * this.matrix[11] + _$UInt_UInt_$Impl_$.toFloat(srcB) * this.matrix[12] + _$UInt_UInt_$Impl_$.toFloat(srcA) * this.matrix[13] + this.matrix[14]);
-				target[targetOffset + 2] = val2;
-				var val3 = Std["int"](_$UInt_UInt_$Impl_$.toFloat(srcR) * this.matrix[15] + _$UInt_UInt_$Impl_$.toFloat(srcG) * this.matrix[16] + _$UInt_UInt_$Impl_$.toFloat(srcB) * this.matrix[17] + _$UInt_UInt_$Impl_$.toFloat(srcA) * this.matrix[18] + this.matrix[19]);
-				target[targetOffset + 3] = val3;
-			}
-		}
-		destBitmapData.image.dirty = true;
-	}
-	,set_matrix: function(value) {
-		if(value == null) value = [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0];
-		return this.matrix = value;
-	}
-	,__class__: openfl_filters_ColorMatrixFilter
-	,__properties__: {set_matrix:"set_matrix"}
-});
-var openfl_filters_GlowFilter = function(color,alpha,blurX,blurY,strength,quality,inner,knockout) {
-	if(knockout == null) knockout = false;
-	if(inner == null) inner = false;
-	if(quality == null) quality = 1;
-	if(strength == null) strength = 2;
-	if(blurY == null) blurY = 6;
-	if(blurX == null) blurX = 6;
-	if(alpha == null) alpha = 1;
-	if(color == null) color = 16711680;
-	openfl_filters_BitmapFilter.call(this);
-	this.color = color;
-	this.alpha = alpha;
-	this.blurX = blurX;
-	this.blurY = blurY;
-	this.strength = strength;
-	this.set_quality(quality);
-	this.inner = inner;
-	this.set_knockout(knockout);
-};
-$hxClasses["openfl.filters.GlowFilter"] = openfl_filters_GlowFilter;
-openfl_filters_GlowFilter.__name__ = ["openfl","filters","GlowFilter"];
-openfl_filters_GlowFilter.__super__ = openfl_filters_BitmapFilter;
-openfl_filters_GlowFilter.prototype = $extend(openfl_filters_BitmapFilter.prototype,{
-	clone: function() {
-		return new openfl_filters_GlowFilter(this.color,this.alpha,this.blurX,this.blurY,this.strength,this.quality,this.inner,this.knockout);
-	}
-	,set_knockout: function(value) {
-		return this.knockout = value;
-	}
-	,set_quality: function(value) {
-		return this.quality = value;
-	}
-	,__class__: openfl_filters_GlowFilter
-	,__properties__: {set_quality:"set_quality",set_knockout:"set_knockout"}
-});
 var openfl_filters_ShaderFilter = function(shader) {
 	openfl_filters_BitmapFilter.call(this);
 	this.shader = shader;
@@ -32479,63 +31976,6 @@ haxe_lang_Iterable.__name__ = ["haxe","lang","Iterable"];
 haxe_lang_Iterable.prototype = {
 	__class__: haxe_lang_Iterable
 };
-var openfl_utils_Timer = function(delay,repeatCount) {
-	if(repeatCount == null) repeatCount = 0;
-	if(isNaN(delay) || delay < 0) throw new js__$Boot_HaxeError(new openfl_errors_Error("The delay specified is negative or not a finite number"));
-	openfl_events_EventDispatcher.call(this);
-	this.__delay = delay;
-	this.set_repeatCount(repeatCount);
-	this.running = false;
-	this.currentCount = 0;
-};
-$hxClasses["openfl.utils.Timer"] = openfl_utils_Timer;
-openfl_utils_Timer.__name__ = ["openfl","utils","Timer"];
-openfl_utils_Timer.__super__ = openfl_events_EventDispatcher;
-openfl_utils_Timer.prototype = $extend(openfl_events_EventDispatcher.prototype,{
-	reset: function() {
-		if(this.running) this.stop();
-		this.currentCount = 0;
-	}
-	,start: function() {
-		if(!this.running) {
-			this.running = true;
-			this.__timerID = window.setInterval($bind(this,this.timer_onTimer),this.__delay | 0);
-		}
-	}
-	,stop: function() {
-		this.running = false;
-		if(this.__timerID != null) {
-			window.clearInterval(this.__timerID);
-			this.__timerID = null;
-		}
-	}
-	,get_delay: function() {
-		return this.__delay;
-	}
-	,set_delay: function(value) {
-		this.__delay = value;
-		if(this.running) {
-			this.stop();
-			this.start();
-		}
-		return this.__delay;
-	}
-	,set_repeatCount: function(v) {
-		if(this.running && v != 0 && v <= this.currentCount) this.stop();
-		this.repeatCount = v;
-		return v;
-	}
-	,timer_onTimer: function() {
-		this.currentCount++;
-		if(this.repeatCount > 0 && this.currentCount >= this.repeatCount) {
-			this.stop();
-			this.dispatchEvent(new openfl_events_TimerEvent("timer"));
-			this.dispatchEvent(new openfl_events_TimerEvent("timerComplete"));
-		} else this.dispatchEvent(new openfl_events_TimerEvent("timer"));
-	}
-	,__class__: openfl_utils_Timer
-	,__properties__: {set_repeatCount:"set_repeatCount",set_delay:"set_delay",get_delay:"get_delay"}
-});
 function $iterator(o) { if( o instanceof Array ) return function() { return HxOverrides.iter(o); }; return typeof(o.iterator) == 'function' ? $bind(o,o.iterator) : o.iterator; }
 var $_, $fid = 0;
 function $bind(o,m) { if( m == null ) return null; if( m.__id__ == null ) m.__id__ = $fid++; var f; if( o.hx__closures__ == null ) o.hx__closures__ = {}; else f = o.hx__closures__[m.__id__]; if( f == null ) { f = function(){ return f.method.apply(f.scope, arguments); }; f.scope = o; f.method = m; o.hx__closures__[m.__id__] = f; } return f; }
