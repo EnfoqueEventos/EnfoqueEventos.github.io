@@ -133,7 +133,7 @@ ApplicationMain.init = function() {
 	if(total == 0) ApplicationMain.start();
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "8", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
+	ApplicationMain.config = { build : "11", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	lime_Assets.initialize();
@@ -1430,17 +1430,15 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		if(!this.smartphone) {
 			this.stage.addEventListener("mouseWheel",$bind(this,this.scrollWheel));
 			this.stage.addEventListener("keyDown",$bind(this,this.onKeyDown));
-		} else this.stage.addEventListener("touchMove",$bind(this,this.scrollTouch));
+		} else this.stage.addEventListener("mouseDown",$bind(this,this.onDown));
 	}
-	,scrollTouch: function(e) {
-		if(e.delta < 0) {
-			var _g = this;
-			_g.set_y(_g.get_y() - this.scrollSpeed);
-		} else {
-			var _g1 = this;
-			_g1.set_y(_g1.get_y() + this.scrollSpeed);
-		}
-		if(this.get_y() > 0) this.set_y(0); else if(this.get_y() < this.stage.stageHeight - this.get_height()) this.set_y(this.stage.stageHeight - this.get_height());
+	,onDown: function(e) {
+		this.startDrag();
+		this.stage.addEventListener("mouseUp",$bind(this,this.onUp));
+	}
+	,onUp: function(e) {
+		this.stopDrag();
+		this.stage.removeEventListener("mouseUp",$bind(this,this.onUp));
 	}
 	,scrollWheel: function(e) {
 		if(e.delta < 0) {
@@ -3630,7 +3628,7 @@ var lime_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 313689;
+	this.version = 850628;
 };
 $hxClasses["lime.AssetCache"] = lime_AssetCache;
 lime_AssetCache.__name__ = ["lime","AssetCache"];
