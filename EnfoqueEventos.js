@@ -105,6 +105,8 @@ ApplicationMain.create = function() {
 	types.push("IMAGE");
 	urls.push("img/icon.png");
 	types.push("IMAGE");
+	urls.push("img/lupaZoom.png");
+	types.push("IMAGE");
 	urls.push("img/onepage.png");
 	types.push("IMAGE");
 	urls.push("img/photo21.png");
@@ -133,7 +135,7 @@ ApplicationMain.init = function() {
 	if(total == 0) ApplicationMain.start();
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "11", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
+	ApplicationMain.config = { build : "63", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	lime_Assets.initialize();
@@ -1692,6 +1694,9 @@ var DefaultAssetLibrary = function() {
 	id = "img/icon.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
+	id = "img/lupaZoom.png";
+	this.path.set(id,id);
+	this.type.set(id,"IMAGE");
 	id = "img/onepage.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
@@ -3169,6 +3174,7 @@ js_html_compat_Uint8Array._subarray = function(start,end) {
 	return a;
 };
 var lib_Album = function() {
+	this.currentPhoto = 1;
 	this.photoPath = "img/album/otro/";
 	this.maxPhotos = 8;
 	this.nPhotos = 3;
@@ -3222,6 +3228,7 @@ lib_Album.prototype = $extend(openfl_display_Sprite.prototype,{
 		var _g = this.nPhotos;
 		while(_g1 < _g) {
 			var i = _g1++;
+			this.currentPhoto = i;
 			var lvl = new openfl_display_Bitmap(openfl_Assets.getBitmapData(this.photoPath + i + ".jpg"));
 			lvl.set_scaleX(.45);
 			lvl.set_scaleY(.45);
@@ -3284,6 +3291,11 @@ lib_Body.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.album.set_x(this.space);
 		this.album.set_y(slogan.get_height() + this.space * 3 + this.bodaBtn.get_height());
 		this.addChild(this.album);
+		var lupa = new lib_Lupa();
+		lupa.set_y(this.album.get_y());
+		lupa.set_x(this.space);
+		this.addChild(lupa);
+		lupa.addEventListener("click",$bind(this,this.clickLupa));
 		var onepage = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/onepage.png"));
 		onepage.set_x(3);
 		onepage.set_y(this.album.get_y() + this.album.get_height() + this.space * 2);
@@ -3293,6 +3305,50 @@ lib_Body.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.get_graphics().drawRoundRect(0,0,this.body_width,this.body_height + this.space,10,10);
 		this.get_graphics().endFill();
 		this.bodaBtn.initActive();
+	}
+	,clickLupa: function(e) {
+		this.currentPhoto = this.album.currentPhoto - 1;
+		var photo = new openfl_display_Bitmap(openfl_Assets.getBitmapData(this.album.photoPath + this.currentPhoto + ".jpg"));
+		var _g = photo;
+		_g.set_y(_g.get_y() - (this.parent.parent.get_y() - (this.stage.stageHeight - photo.get_height()) * .5));
+		this.parent.parent.addChild(photo);
+		this.parent.parent.getChildAt(0).set_alpha(.1);
+		this.stage.addEventListener("keyDown",$bind(this,this.changePhoto));
+	}
+	,changePhoto: function(e) {
+		var _g = e.keyCode;
+		switch(_g) {
+		case 39:
+			this.parent.parent.removeChild(this.parent.parent.getChildAt(1));
+			this.toNull(this.parent.parent.getChildAt(1));
+			this.currentPhoto++;
+			if(this.currentPhoto > this.album.maxPhotos) this.currentPhoto = 1;
+			var photo = new openfl_display_Bitmap(openfl_Assets.getBitmapData(this.album.photoPath + this.currentPhoto + ".jpg"));
+			var _g1 = photo;
+			_g1.set_y(_g1.get_y() - (this.parent.parent.get_y() - (this.stage.stageHeight - photo.get_height()) * .5));
+			this.parent.parent.addChild(photo);
+			break;
+		case 37:
+			this.parent.parent.removeChild(this.parent.parent.getChildAt(1));
+			this.toNull(this.parent.parent.getChildAt(1));
+			this.currentPhoto--;
+			if(this.currentPhoto == 0) this.currentPhoto = this.album.maxPhotos;
+			var photo1 = new openfl_display_Bitmap(openfl_Assets.getBitmapData(this.album.photoPath + this.currentPhoto + ".jpg"));
+			var _g11 = photo1;
+			_g11.set_y(_g11.get_y() - (this.parent.parent.get_y() - (this.stage.stageHeight - photo1.get_height()) * .5));
+			this.parent.parent.addChild(photo1);
+			break;
+		case 27:
+			this.stage.removeEventListener("keyDown",$bind(this,this.changePhoto));
+			this.parent.parent.removeChild(this.parent.parent.getChildAt(1));
+			this.toNull(this.parent.parent.getChildAt(1));
+			this.parent.parent.getChildAt(0).set_alpha(1);
+			break;
+		default:
+		}
+	}
+	,toNull: function(o) {
+		o = null;
 	}
 	,desactivateBtn: function(e) {
 		this.bodaBtn.desactivate();
@@ -3445,6 +3501,30 @@ lib_Logo.prototype = $extend(openfl_display_Sprite.prototype,{
 		this._timer.removeEventListener("timer",$bind(this,this.loop));
 	}
 	,__class__: lib_Logo
+});
+var lib_Lupa = function() {
+	openfl_display_Sprite.call(this);
+	this.addEventListener("addedToStage",$bind(this,this.onStage));
+};
+$hxClasses["lib.Lupa"] = lib_Lupa;
+lib_Lupa.__name__ = ["lib","Lupa"];
+lib_Lupa.__super__ = openfl_display_Sprite;
+lib_Lupa.prototype = $extend(openfl_display_Sprite.prototype,{
+	onStage: function(e) {
+		this.removeEventListener("addedToStage",$bind(this,this.onStage));
+		this.get_graphics().beginFill(16777215);
+		this.get_graphics().drawRoundRect(0,0,48,48,10,10);
+		this.get_graphics().endFill();
+		var bitmap = new openfl_display_Bitmap(openfl_Assets.getBitmapData("img/lupaZoom.png"));
+		this.addChild(bitmap);
+		var _g = this;
+		_g.set_x(_g.get_x() + 10);
+		var _g1 = this;
+		_g1.set_y(_g1.get_y() + 20);
+		this.buttonMode = true;
+		this.set_alpha(.5);
+	}
+	,__class__: lib_Lupa
 });
 var lib_RedBtn = function(c,s,h,w,url) {
 	if(url == null) url = "";
@@ -3628,7 +3708,7 @@ var lime_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 850628;
+	this.version = 950572;
 };
 $hxClasses["lime.AssetCache"] = lime_AssetCache;
 lime_AssetCache.__name__ = ["lime","AssetCache"];
