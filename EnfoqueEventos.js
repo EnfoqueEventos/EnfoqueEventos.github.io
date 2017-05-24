@@ -135,7 +135,7 @@ ApplicationMain.init = function() {
 	if(total == 0) ApplicationMain.start();
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "63", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
+	ApplicationMain.config = { build : "64", company : "Vicente Fleitas", file : "EnfoqueEventos", fps : 60, name : "EnfoqueEventos", orientation : "", packageName : "EnfoqueEventos", version : "1.0.0", windows : [{ allowHighDPI : true, antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 0, hidden : null, maximized : null, minimized : null, parameters : "{}", resizable : true, stencilBuffer : true, title : "EnfoqueEventos", vsync : false, width : 0, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	lime_Assets.initialize();
@@ -3438,7 +3438,7 @@ lib_Header.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.cf.set_y(126);
 		this.cf.set_alpha(0);
 		this.addChild(this.cf);
-		var twitter_btn = new lib_RedBtn(1952511,"t",32,32,"https://twitter.com/criptomedia");
+		var twitter_btn = new lib_RedBtn(1952511,"t",32,32,"https://twitter.com/JavierM37728933");
 		twitter_btn.set_x(this.header_width - twitter_btn._w * 2);
 		twitter_btn.set_y(90);
 		this.addChild(twitter_btn);
@@ -3708,7 +3708,7 @@ var lime_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 950572;
+	this.version = 142744;
 };
 $hxClasses["lime.AssetCache"] = lime_AssetCache;
 lime_AssetCache.__name__ = ["lime","AssetCache"];
